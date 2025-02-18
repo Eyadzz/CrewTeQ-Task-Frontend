@@ -1,0 +1,47 @@
+<button pButton pRipple (click)="showDialog()">
+  <PlusIcon pButtonIcon />
+  <span pButtonLabel>Add Employee</span>
+</button>
+<p-dialog header="Add Employee" [modal]="true" [(visible)]="visible" [style]="{ width: '25rem' }">
+  <div class="flex flex-col gap-4">
+    <div class="flex items-center gap-4">
+      <label for="firstName" class="font-semibold w-24">First Name</label>
+      <input
+        pInputText
+        id="firstName"
+        [(ngModel)]="firstName"
+        class="flex-auto"
+        autocomplete="off"
+        required="true"
+      />
+    </div>
+    <div class="flex items-center gap-4">
+      <label for="lastName" class="font-semibold w-24">Last Name</label>
+      <input
+        pInputText
+        id="lastName"
+        [(ngModel)]="lastName"
+        class="flex-auto"
+        autocomplete="off"
+        required="true"
+      />
+    </div>
+    <div class="flex items-center gap-4 mb-4">
+      <label for="username" class="font-semibold w-24">Username</label>
+      <input
+        pInputText
+        id="username"
+        [(ngModel)]="username"
+        class="flex-auto"
+        autocomplete="off"
+        required="true"
+      />
+    </div>
+  </div>
+  <div class="flex justify-end gap-2 mt-4">
+    <p-button label="Cancel" severity="secondary" (click)="visible = false; resetForm()" />
+    <p-button label="Add" (click)="add()" />
+  </div>
+</p-dialog>
+
+<p-toast position="bottom-right"></p-toast>

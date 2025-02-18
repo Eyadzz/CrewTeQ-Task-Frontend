@@ -1,0 +1,11 @@
+<p-carousel [value]="products" [numVisible]="1" [numScroll]="3" [circular]="false" [autoplayInterval]="2000" [style]="{'max-width':'80%', 'margin':'0 auto'}">
+  <ng-template let-product #item>
+    <div class="border border-surface rounded-border m-2 p-4">
+      <div class="mb-4">
+        <div class="relative mx-auto">
+          <img src="https://primefaces.org/cdn/primeng/images/demo/product/{{ product.image }}" [alt]="product.name" class="w-full rounded-border" />
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</p-carousel>
